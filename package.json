@@ -1,0 +1,17 @@
+{
+  "name": "wifip2p",
+  "version": "0.0.1",
+  "description": "WIFI P2P",
+  "cordova": {
+    "id": "wifip2p",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "wifip2p:cordova",
+    "cordova-android"
+  ],
+  "author": "Louis",
+  "license": "ISC"
+}

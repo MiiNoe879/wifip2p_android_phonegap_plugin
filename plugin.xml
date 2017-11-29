@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="wifip2p" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>wifip2p</name>
+    <js-module name="wifip2p" src="www/wifip2p.js">
+        <clobbers target="window.WiFiDirSocket" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="wifip2p">
+                <param name="android-package" value="wifip2p.wifip2p" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="26" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-feature android:name="android.hardware.wifi.direct" android:required="true" />
+        </config-file>
+        <source-file src="src/android/wifip2p.java" target-dir="src/wifip2p/wifip2p" />
+        <source-file src="src/android/WiFiDirectBroadcastReceiver.java" target-dir="src/wifip2p/wifip2p" />
+    </platform>
+</plugin>
